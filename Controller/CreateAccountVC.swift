@@ -35,11 +35,18 @@ class CreateAccountVC: UIViewController {
         guard let email = emailTxt.text , emailTxt.text != "" else { return }
         guard let pass = passTxt.text , passTxt.text != "" else { return }
         
-        AuthService.instance.registerUser(email: email, password: pass) { (sucess) in
+//        AuthService.instance.registerUser(email: email, password: pass) { (sucess) in
+//            if sucess {
+//                print("registered user")
+//            }
+//        }
+        
+        AuthService.instance.loginUser(email: email, password: pass) { (sucess) in
             if sucess {
-                print("registered user")
+                print("AuthToken: \(AuthService.instance.authToken)")
             }
         }
+        
     }
     
     @IBAction func closePressed(_ sender: Any) {

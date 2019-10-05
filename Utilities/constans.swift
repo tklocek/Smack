@@ -13,7 +13,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 // URL Constants
 let BASE_URL = "https://tom-chatty.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
-
+let URL_LOGIN = "\(BASE_URL)account/login"
 
 
 // Seques
@@ -30,3 +30,7 @@ let LOGGED_IN_KEY = "loggedin"
 let USER_EMAIL = "userEmail"
 
 
+// Headers
+let HEADER = [
+    "Content-Type": "application/json; charset=utf-8"
+        ]

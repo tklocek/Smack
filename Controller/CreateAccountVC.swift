@@ -26,15 +26,7 @@ class CreateAccountVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func pickBGColorPressed(_ sender: Any) {
-        
-    }
-    
-    @IBAction func pickAvatarPressed(_ sender: Any) {
-        
-    }
-    
+
     @IBAction func createAccntPressed(_ sender: Any) {
         guard let name = userNameTxt.text , userNameTxt.text != "" else { return }
         guard let email = emailTxt.text , emailTxt.text != "" else { return }
@@ -65,7 +57,13 @@ class CreateAccountVC: UIViewController {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
     
-
+    @IBAction func pickBGColorPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func pickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
+    }
     
     
     

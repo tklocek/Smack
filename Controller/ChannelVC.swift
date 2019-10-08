@@ -20,7 +20,7 @@ class ChannelVC: UIViewController {
 
         // Do any additional setup after loading the view.
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
-        
+//        NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIF_DATA_DID_CHANGE, object: nil)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -28,14 +28,8 @@ class ChannelVC: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func userDataDidChange(_ notif: Notification) {
+        
+        
     }
-    */
-
 }

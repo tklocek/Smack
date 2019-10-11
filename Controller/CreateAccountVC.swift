@@ -7,8 +7,11 @@
 //
 
 import UIKit
+    
 
-class CreateAccountVC: UIViewController {
+
+
+class CreateAccountVC: UIViewController, UINavigationControllerDelegate {
 
     // Outlets
     @IBOutlet weak var userNameTxt: UITextField!
@@ -21,12 +24,41 @@ class CreateAccountVC: UIViewController {
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
     
     
+    func myFuncInViewControllerA() {
+        print("Back to ViewControllerA!")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-        // Do any additional setup after loading the view.
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+            print(UserDataService.instance.avatarName)
+        } else {
+            print("AvatarName is empty")
+        }
+
     }
 
+    func handleAvatarDismissed() {
+       print("handleAvatarDissmissed")
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+            print(UserDataService.instance.avatarName)
+        } else {
+            print("AvatarName is empty")
+        }
+    }
+    
     @IBAction func createAccntPressed(_ sender: Any) {
         guard let name = userNameTxt.text , userNameTxt.text != "" else { return }
         guard let email = emailTxt.text , emailTxt.text != "" else { return }
@@ -62,9 +94,12 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func pickAvatarPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
+  
+     
+            
+            performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
+      
     }
     
-    
-    
+
 }

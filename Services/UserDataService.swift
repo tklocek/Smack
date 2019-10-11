@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 class UserDataService {
     static let instance = UserDataService()
     
@@ -28,5 +30,7 @@ class UserDataService {
     func setAvatarName(avatarName: String) {
         self.avatarName = avatarName
     }
+    
+    
     
 }

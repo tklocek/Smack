@@ -24,6 +24,9 @@ let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwindToChannel"
 let TO_AVATAR_PICKER = "toAvatarPicker"
 
+// Notificaton Constans
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataCHanged")
+
 
 // User Defaults
 
@@ -36,3 +39,6 @@ let USER_EMAIL = "userEmail"
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8"
         ]
+
+// Colors
+let smackPurplePlaceholder = #colorLiteral(red: 0.3254901961, green: 0.4196078431, blue: 0.7764705882, alpha: 0.5)

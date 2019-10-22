@@ -20,7 +20,6 @@ let URL_GET_CHANNELS = "\(BASE_URL)channel/"
 
 
 // Seques
-
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwindToChannel"
@@ -33,7 +32,7 @@ let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataCHanged")
 // User Defaults
 
 let TOKEN_KEY = "token"
-let LOGGED_IN_KEY = "loggedin"
+let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
 
 

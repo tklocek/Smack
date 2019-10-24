@@ -16,7 +16,7 @@ class SocketService: NSObject {
     let socket : SocketIOClient
 
     override init() {
-        self.manager = SocketManager(socketURL: URL(string: BASE_URL)!)
+        self.manager = SocketManager(socketURL: URL(string: URL_GET_CHANNELS)!, config: [.log(true), .compress])
         self.socket = manager.defaultSocket
         super.init()
     }
@@ -30,13 +30,12 @@ class SocketService: NSObject {
     }
     
     func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
-        
         socket.emit("newChannel", channelName, channelDescription)
-        
         completion(true)
     }
     
     func getChannel(completion: @escaping CompletionHandler) {
+        print("GetChannel function starts")
         socket.on("channelCreated") { (dataArray, ack) in
             guard let channelName = dataArray[0] as? String else { return }
             guard let channelDesc = dataArray[1] as? String else { return }
@@ -44,8 +43,17 @@ class SocketService: NSObject {
             
             let newChannel = Channel(channelTitle: channelName, channelDescription: channelDesc, id: channelId)
             MessageService.instance.channels.append(newChannel)
+            print("GetChannel function - success")
             completion(true)
-            
+        }
+        socket.on(clientEvent: .connect) {data, ack in
+                print("socket connected")
+        }
+        socket.on("channelCreated") { dataArray, ack in
+            print("success")
         }
     }
+    
+    
+    
 }

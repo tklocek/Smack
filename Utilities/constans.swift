@@ -27,7 +27,7 @@ let TO_AVATAR_PICKER = "toAvatarPicker"
 
 // Notificaton Constans
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataCHanged")
-
+let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
 
 // User Defaults
 

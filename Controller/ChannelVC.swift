@@ -39,6 +39,9 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
 
+=======
+        NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+>>>>>>> parent of 0b7be3b... I think creating channels is working
     }
     
     func setupUserInfo() {

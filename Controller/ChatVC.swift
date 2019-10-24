@@ -35,8 +35,7 @@ class ChatVC: UIViewController {
         if AuthService.instance.isLoggedIn {
             // get channels
             channelNameLbl.text = "Smack"
-        
-            
+            onLoginGetMessages()
         } else {
             channelNameLbl.text = "Please Log In"
         }
@@ -46,18 +45,15 @@ class ChatVC: UIViewController {
         MessageService.instance.findAllChannel { (success) in
             if success {
                 // Do stuff wiht channels
+                
+                
+                
             }
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
+    
 }

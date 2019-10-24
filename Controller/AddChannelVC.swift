@@ -18,12 +18,20 @@ class AddChannelVC: UIViewController {
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func createChannelBtnPressed(_ sender: Any) {
+        guard let channelName = nameTxt.text , nameTxt.text != "" else { return }
+        guard let channelDesc = chanDesc.text , chanDesc.text != "" else { return }
+        
+        SocketService.instance.addChannel(channelName: channelName, channelDescription: channelDesc) { ( success ) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupView()
     }
 

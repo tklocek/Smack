@@ -37,11 +37,7 @@ class MessageService {
                             let channel = Channel(channelTitle: name, channelDescription: channelDescription, id: id)
                             self.channels.append(channel)
                         }
-                        print(self.channels)
-<<<<<<< HEAD
                         NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
-=======
->>>>>>> parent of 0b7be3b... I think creating channels is working
                         completion(true)
                     }
                 } catch {

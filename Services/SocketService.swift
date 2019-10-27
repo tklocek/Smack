@@ -16,7 +16,7 @@ class SocketService: NSObject {
     let socket : SocketIOClient
 
     override init() {
-        self.manager = SocketManager(socketURL: URL(string: URL_GET_CHANNELS)!, config: [.log(true), .compress])
+        self.manager = SocketManager(socketURL: URL(string: URL_GET_CHANNELS)!)
         self.socket = manager.defaultSocket
         super.init()
     }

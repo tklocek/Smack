@@ -30,20 +30,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-<<<<<<< HEAD
         SocketService.instance.establishConnection()
-        print("Connection established")
-=======
->>>>>>> parent of 0b7be3b... I think creating channels is working
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
-<<<<<<< HEAD
         SocketService.instance.closeConnection()
-=======
->>>>>>> parent of 0b7be3b... I think creating channels is working
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
